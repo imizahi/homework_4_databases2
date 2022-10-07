@@ -1,3 +1,11 @@
+1. Add class_id to table rozklad:
+
+mysql> UPDATE rozklad SET class_id=1 WHERE id=1;
+mysql> UPDATE rozklad SET class_id=2 WHERE id=2;
+mysql> UPDATE rozklad SET class_id=3 WHERE id=4;
+mysql> UPDATE rozklad SET class_id=4 WHERE id=3;
+
+2. 
 SELECT t.first_name, t.last_name, l.name, r.number, c.name, rozklad.time 
 FROM rozklad INNER JOIN lessons l ON l.id=rozklad.lesson_id INNER JOIN teachers t ON t.id=rozklad.teacher_id 
 INNER JOIN rooms r ON  r.id=rozklad.room_id INNER JOIN rozklad rc ON rc.room_id=r.id INNER JOIN classes c ON c.id=rc.class_id 
